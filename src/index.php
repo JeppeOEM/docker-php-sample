@@ -45,24 +45,10 @@
 </div>
 
 
-
+<pre></pre>
 		<!--</div>-->
 </body>
 
-      <style type="text/css" media="screen">
-        pre {
-          transform: rotate(180deg);
-          z-index: 0;
-          position: fixed;
-          margin:0;
-          padding:0;
-          width:100vw;
-          height:102vh;
-          color: rgba(0, 255, 255, 0.74) !important;
-
-          line-height: 1.2;
-        }
-      </style>
       <script type="module">
         import { run } from './run.js'
         import * as program from './programs/contributed/slime_dish2.js'
