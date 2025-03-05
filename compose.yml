@@ -1,12 +1,21 @@
 services:
-  server:
-    build:
-      context: .
+  nginx:
+    image: nginx:stable-alpine
     ports:
       - 9000:80
+    volumes:
+      - ./src:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
-      db:
-        condition: service_healthy
+      - php
+      - db
+
+  php:
+    build:
+      context: .
+      dockerfile: php.Dockerfile
+    volumes:
+      - ./src:/var/www/html
     secrets:
       - db-password
     environment:
@@ -19,6 +28,10 @@ services:
         - action: sync
           path: ./src
           target: /var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+
   db:
     image: mariadb
     restart: always
@@ -44,6 +57,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+
   phpmyadmin:
     image: phpmyadmin
     ports:
@@ -52,8 +66,10 @@ services:
       - db
     environment:
       - PMA_HOST=db
+
 volumes:
   db-data:
+
 secrets:
   db-password:
     file: db/password.txt

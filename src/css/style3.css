@@ -55,7 +55,7 @@ a{
 			opacity: 0;
 			transform: translateX(-100px);
 		}
-        
+
 		/* Content container needs relative positioning */
 		.content-container {
 			position: relative;
@@ -427,7 +427,7 @@ li.tight-h::before {
     box-shadow: 8px 8px 0 1px #00a;
     color: #ff5;
 }
-.panel-zaz:hover h2:before, ..panel-zaz:active h2:before, .panel-zaz:focus h2:before {
+.panel-zaz:hover h2:before, .panel-zaz:active h2:before, .panel-zaz:focus h2:before {
     color: #999;
 }
 .panel-zaz:hover:after {
