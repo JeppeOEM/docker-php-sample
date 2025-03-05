@@ -1,9 +1,9 @@
-<div id="menu" class="greyframe titledbox shadow0xb0">
-    <div class="hdr"><h2 class="cap">Navigation</h2></div>
-    <dl>
-        <comp-dd href="index.php" text="Home"></comp-dd>
-        <comp-dd href="bio.php" text="Bio"></comp-dd>
-        <comp-dd href="portfolio.php" text="Portfolio"></comp-dd>
-        <comp-dd href="art.php" text="Art"></comp-dd>
-    </dl>
-</div>
+			<div id="menu" class="greyframe titledbox shadow0xb0">
+				<div id="navigation" class="hdr"><h2 class="cap">Navigation</h2></div>
+				<dl>
+					<comp-dd text="Home" data-page="home-content"></comp-dd>
+					<comp-dd text="Bio" data-page="bio-content"></comp-dd>
+					<comp-dd text="Portfolio" data-page="portfolio-content"></comp-dd>
+					<comp-dd text="Art" data-page="art-content"></comp-dd>
+				</dl>
+			</div>

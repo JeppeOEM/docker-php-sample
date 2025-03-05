@@ -37,30 +37,35 @@ a{
 }
 
 
-.page-content {
-    display: none;
-    opacity: 0;
-    transform: translateX(100px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    position: absolute;
-    width: 100%;
-}
-
-.page-content.active {
-    display: block;
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Animation for page exit */
-.page-content.exit {
-    opacity: 0;
-    transform: translateX(-100px);
-}
+		.page-content {
+			display: none;
+			opacity: 0;
+			transform: translateX(100px);
+			transition: opacity 0.5s ease, transform 0.5s ease;
+			/*position: absolute;*/
+			/*width: 100%;*/
+		}
+		.page-content.active {
+			display: block;
+			opacity: 1;
+			transform: translateX(0);
+		}
+		/* Animation for page exit */
+		.page-content.exit {
+			opacity: 0;
+			transform: translateX(-100px);
+		}
+        
+		/* Content container needs relative positioning */
+		.content-container {
+			position: relative;
+			min-height: 300px; /* Adjust based on content */
+			overflow: hidden;
+		}
 
 /* Background animation */
 pre {
-    transform: rotate(180deg);
+    /*transform: rotate(180deg);*/
     z-index: -20;
     top: 0;
     position: fixed;
