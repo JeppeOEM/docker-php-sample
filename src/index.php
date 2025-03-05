@@ -1,5 +1,5 @@
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en-US">
 
 <head>
@@ -22,26 +22,37 @@
 </head>
 	<body class="xform">
 
-			
-		<div id="menu" class="greyframe titledbox shadow0xb0">
-			<div class="hdr"><h2 class="cap">Navigation</h2></div>
-			<dl>
-				<comp-dd href="index.php" text="Home"></comp-dd>
-				<comp-dd href="bio.php" text="Bio"></comp-dd>
-				<comp-dd href="portfolio.php" text="Portfolio"></comp-dd>
-		<comp-dd href="art.php" text="Art"></comp-dd>
-			</dl>
-		</div>
+<div class ="layout-container">
+   <div class="side-bar">
+    <?php include 'menu.php'; ?>
+    </div>
+    <div class="main-content">
+			</div>
+      <div class="bottom-left-box">
 
-		
-		
+      <div id="menu" class="greyframe titledbox shadow0xb0">
+          <div class="hdr"><h2 class="cap">Hello</h2></div>
+          <p>Hi i am Jeppe Marquardt, a creative web developer, who thinks code is actually beautifull</p>
+           i consume everything from x86 assembly to css 
+          <dl>
+              <comp-dd href="index.php" text="Home"></comp-dd>
+              <comp-dd href="bio.php" text="Bio"></comp-dd>
+              <comp-dd href="portfolio.php" text="Portfolio"></comp-dd>
+              <comp-dd href="art.php" text="Art"></comp-dd>
+          </dl>
+      </div>
+      </div>
+</div>
+
+
+
 		<!--</div>-->
-</body> 
+</body>
 
       <style type="text/css" media="screen">
         pre {
           transform: rotate(180deg);
-          z-index: 0; 
+          z-index: 0;
           position: fixed;
           margin:0;
           padding:0;

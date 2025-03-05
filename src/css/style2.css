@@ -11,6 +11,15 @@ a.panel-zaz.shadow0xb0:before {
 }
 }@media screen and (max-width:1015px) {
 
+.layout-container {
+  flex-direction: column;
+}
+
+.side-bar{
+
+  margin-right: auto;
+}
+
 #action-panels {
     max-width: 640px;
     margin-left: auto;

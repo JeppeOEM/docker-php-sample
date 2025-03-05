@@ -1,5 +1,5 @@
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en-US">
 
 <head>
@@ -22,61 +22,58 @@
 </head>
 	<body class="xform">
 
+<div class ="layout-container">
+   <div class="side-bar">
+    <?php include 'menu.php'; ?>
+    </div>
+    <div class="main-content">
+
+				<h1>,.)&Bio&(.,</h1>
 			
-		<div id="menu" class="greyframe titledbox shadow0xb0">
-			<div class="hdr"><h2 class="cap">Navigation</h2></div>
-			<dl>
-				<comp-dd href="index.php" text="Home"></comp-dd>
-				<comp-dd href="bio.php" text="Bio"></comp-dd>
-				<comp-dd href="portfolio.php" text="Portfolio"></comp-dd>
-		<comp-dd href="art.php" text="Art"></comp-dd>
-			</dl>
+		<div id="action-panels" class="centerme ilbl">
+			<a class="panel-zaz shadow0xb0" href="fontlist/index.html" style="background-image:url(images/panel1.jpg);">
+				<h2 class="cap">Font Index</h2>
+				<div>Browse / preview all fonts and try them out</div>
+			</a>
+			<a class="panel-zaz shadow0xb0" href="readme/index.html" style="background-image:url(images/panel2.jpg);">
+				<h2 class="cap">ReadMe</h2>
+				<div>Documentation, FAQ,<br>and usage notes</div>
+			</a>
+			<a class="panel-zaz shadow0xb0" href="showcase/index.html" style="background-image:url(images/panel3.jpg);">
+				<h2 class="cap">Samples+Showcase</h2>
+				<div>See some classic PC<br>fonts in action</div>
+			</a>
+			<a class="panel-zaz shadow0xb0" href="download/index.html" style="background-image:url(images/panel4.jpg);">
+				<h2 class="cap">Download</h2>
+				<div>LEECH 'EM ALL! (or<br>just selected subsets)</div>
+			</a>
 		</div>
+</div>
+      <div class="bottom-left-box">
 
-		
-		<div id="index-shortcuts" class="greyframe titledbox shadow0xb0">
-			<div class="hdr"><h2 class="cap">Font Index Shortcuts</h2></div>
-			<dl>
-				<dt><a href="fontlist/indexc4ca.html?1#top"         >I. IBM PC & Family</a></dt>
+      <div id="menu" class="greyframe titledbox shadow0xb0">
+          <div class="hdr"><h2 class="cap">Hello</h2></div>
+          <p>Hi i am Jeppe Marquardt, a creative web developer, who thinks code is actually beautifull</p>
+           i consume everything from x86 assembly to css 
+          <dl>
+              <comp-dd href="index.php" text="Home"></comp-dd>
+              <comp-dd href="bio.php" text="Bio"></comp-dd>
+              <comp-dd href="portfolio.php" text="Portfolio"></comp-dd>
+              <comp-dd href="art.php" text="Art"></comp-dd>
+          </dl>
+      </div>
+      </div>
+</div>
 
-				<a href="fontlist/indexc4ca.html?1#top-ibm"             >Main PC, PS/2 line:</a>
-				<comp-dd href="https://example.com" text="Example Link"></comp-dd>
-				<comp-dd href="https://example.com" text="Example Link"></comp-dd>
-				<comp-dd href="https://example.com" text="Example Link"></comp-dd>
-				<comp-dd href="https://example.com" text="Example Link"></comp-dd>
-				<comp-dd href="https://example.com" text="Example Link"></comp-dd>
-				<comp-dd href="https://example.com" text="Example Link"></comp-dd>
-				<comp-dd href="https://example.com" text="Example Link"></comp-dd>
-				<comp-dd href="https://example.com" text="Example Link"></comp-dd>
-				<comp-dd href="https://example.com" text="Example Link"></comp-dd>
-				<comp-dd href="https://example.com" text="Example Link"></comp-dd>
 
-			</dl>
-			<dl>
-				<dt><a href="fontlist/indexc81e.html?2#top"         >II. PC Compatibles</a></dt>
 
-				<dd><a href="fontlist/indexc81e.html?2#acer"        >Acer/Multitech</a></dd>
-				<dd><a href="fontlist/indexc81e.html?2#amstrad"     >Amstrad</a></dd>
-				<dd><a href="fontlist/indexc81e.html?2#ast"         >AST</a></dd>
-				<dd><a href="fontlist/indexc81e.html?2#att"         >AT&amp;T</a></dd>
-			</dl>
-			<dl>
-				<dt><a href="fontlist/indexeccb.html?3#top"         >III. Video Hardware</a></dt>
-
-				<dd><a href="fontlist/indexeccb.html?3#acer"        >Acer/Multitech</a></dd>
-				<dd><a href="fontlist/indexeccb.html?3#ami"         >AMI (VBIOS)</a></dd>
-				<dd><a href="fontlist/indexeccb.html?3#ati"         >ATI</a></dd>
-				<dd><a href="fontlist/indexeccb.html?3#cirruslogic" >Cirrus Logic</a></dd>
-			</dl>
-		</div>
-		
 		<!--</div>-->
-</body> 
+</body>
 
       <style type="text/css" media="screen">
         pre {
           transform: rotate(180deg);
-          z-index: 0; 
+          z-index: 0;
           position: fixed;
           margin:0;
           padding:0;

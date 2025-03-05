@@ -2,11 +2,11 @@
 :root {
   --terminal-green: #66FF66; /* Define the color variable */
   --dark-black: #0a0611;
-  --dark-blue: #4699ff;  
-  --white-grey: #f2eff8;  
+  --dark-blue: #4699ff;
+  --white-grey: #f2eff8;
   --orange: #c60;
-  --bright-cyan: #5ff;  
-    --yellow: #FF0; 
+  --bright-cyan: #5ff;
+    --yellow: #FF0;
     --accent: #5ff;
      --magenta: #FF00FF
 }
@@ -17,38 +17,6 @@
     src: url(../fonts/FiraMono-Regular.eot);
     src: url(../fonts/FiraMono-Regulard41d.eot?#iefix) format('embedded-opentype'), url(../fonts/FiraMono-Regular.woff2) format('woff2'), url(../fonts/FiraMono-Regular.woff) format('woff'), url(../fonts/FiraMono-Regular.ttf) format('truetype');
 }
-
-    .vertical-container {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #f5f5f5;
-    }
-    
-    .vertical-name {
-      display: flex;
-      flex-direction: column;
-      font-family: "Arial", sans-serif;
-      font-size: 2rem;
-      font-weight: bold;
-      letter-spacing: 4px;
-      color: #333;
-      text-transform: uppercase;
-    }
-    
-    .letter {
-      margin: 0.2rem 0;
-      opacity: 0;
-      animation: fadeIn 0.3s forwards;
-      animation-delay: calc(0.1s * var(--index));
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
 
 body {
     text-align: center;
@@ -68,6 +36,10 @@ a{
     color: var(--magenta)
 }
 
+
+.page-header{
+    font-size: 25px
+}
 
 .main-navigation {
     display: flex
@@ -149,23 +121,23 @@ ul.spaced li {
     margin-bottom: 1em!important;
 }
 
-.shadow0xb0:before {
-    background-color: #000;
-    z-index: -20;
-    position: absolute;
-    display: block;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACAQMAAABFZu8gAAAABlBMVEUAqqoAAAC9JseZAAAADElEQVQI12O4wMwBAAKCANzeIkjIAAAAAElFTkSuQmCC);
-    content: ' ';
-    width: 100%;
-    height: 100%;
-    top: 16px;
-    left: 16px;
-    transition: all .1s ease-in-out;
-}
-a.shadow0xb0:hover:before, a.shadow0xb0:active:before, a.shadow0xb0:focus:before {
-    filter: saturate(1) brightness(1);
-    outline: 0;
-}
+/*.shadow0xb0:before {*/
+/*    background-color: #000;*/
+/*    z-index: -20;*/
+/*    position: absolute;*/
+/*    display: block;*/
+/*    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACAQMAAABFZu8gAAAABlBMVEUAqqoAAAC9JseZAAAADElEQVQI12O4wMwBAAKCANzeIkjIAAAAAElFTkSuQmCC);*/
+/*    content: ' ';*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    top: 16px;*/
+/*    left: 16px;*/
+/*    transition: all .1s ease-in-out;*/
+/*}*/
+/*a.shadow0xb0:hover:before, a.shadow0xb0:active:before, a.shadow0xb0:focus:before {*/
+/*    filter: saturate(1) brightness(1);*/
+/*    outline: 0;*/
+/*}*/
 #content * {
     vertical-align: top;
 }
@@ -459,13 +431,86 @@ li.tight-h::before {
 }
 
 
-#menu {
-    position: absolute;
-    top: 60px;
-    left: 60px;
-    width: 200px;
-    height: 200px;
+.layout-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.side-bar {
+  margin-top: 30px;
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.bottom-left-box {
+  margin-top: auto;
+  width: 300px;
+  flex-shrink: 0;
+}
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+
+
+#header-box {
+    position: relative;
+    width: 100%;
+    height: 175px;
     max-width: 130ch;
+}
+#header-box dl {
+    flex-basis: 25%;
+    max-width: 22ch;
+    min-width: 20ch;
+    margin: 1em 0 1em 1ch;
+    z-index: 2;
+    position: relative;
+    left: -.5px;
+    text-align: left;
+}
+#header-box dl>a:link, #header-box dl>a:visited {
+    color: var(--bright-cyan)!important;
+}
+#header-box dl>a:hover, #header-box dl>a:active {
+    color: #fff!important;
+    background-color: #0aa;
+}
+#header-box dt {
+    text-align: left;
+    text-transform: uppercase;
+    width: 22ch;
+    padding: 0 0 7px;
+    margin: 0 0 .5em -.3px;
+    color: var(--orange);
+    border-bottom: 1px solid #c00;
+}
+#header-box dt a {
+    color: var(--orange);
+}
+#header-box dd a:before {
+    background-color: #323232;
+    color: #b00;
+}
+#header-box dd a:hover:before, #header-box dd a:active:before {
+    content: "\25BA\A0";
+    color: var(--orange);
+}
+#header-box .hdr {
+    flex-shrink: 0;
+    flex-basis: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+
+#menu {
+    position: relative;
+    width: 175px;
+    min-height: 175px;
+    /* max-width: 130ch; */
 }
 #menu dl {
     flex-basis: 25%;
