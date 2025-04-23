@@ -1,3 +1,93 @@
+
+        function fillBoxLine() {
+            // Get the width of the window
+            const windowWidth = window.innerWidth;
+
+            // Estimate how many characters we need based on font size
+            // Using monospace font (approx 9.6px per character at 16px font size)
+            const charWidth = 9.6;
+            const numChars = Math.ceil(windowWidth / charWidth);
+
+            // Fill the lines with the appropriate characters
+            document.getElementById('top-line').textContent = '▄'.repeat(numChars);
+            document.getElementById('middle-line').textContent = '█'.repeat(numChars);
+            document.getElementById('bottom-line').textContent = '▀'.repeat(numChars);
+        }
+
+        // Run on page load
+        fillBoxLine();
+
+        // Recalculate when window is resized
+        window.addEventListener('resize', fillBoxLine);
+
+
+
+function fillWithDollars() {
+	const asciiLogo = document.getElementById("ascii-logo");
+	const asciiLines = asciiLogo.innerText.trim().split("\n").length;
+
+	// Create a measurement span to calculate the exact width of a dollar sign
+	function getCharWidth(container) {
+		// Create temporary span to measure dollar sign width in the same font as container
+		const span = document.createElement("span");
+		span.style.visibility = "hidden"; // Make it invisible
+		span.style.position = "absolute"; // Remove from flow
+		span.style.whiteSpace = "nowrap"; // Prevent wrapping
+
+		// Copy the font properties from the container
+		const containerStyle = window.getComputedStyle(container);
+		console.log(containerStyle)
+		span.style.font = containerStyle.font;
+		span.style.fontSize = containerStyle.fontSize;
+		span.style.fontFamily = containerStyle.fontFamily;
+
+		// Add the dollar sign to measure
+		span.textContent = "$";
+
+		// Add to document to measure
+		document.body.appendChild(span);
+		const width = span.getBoundingClientRect().width;
+		document.body.removeChild(span);
+
+		return width;
+	}
+
+	function updateDollarFill() {
+		// Get the containers
+		const leftBox = document.querySelector(".left-box");
+		const rightBox = document.querySelector(".right-box");
+
+		// Calculate how many dollar signs fit per line based on container width and exact character width
+		const leftCharWidth = getCharWidth(leftBox);
+		const rightCharWidth = getCharWidth(rightBox);
+
+		// Calculate max number of $ that fit in each container
+		const leftWidth = Math.floor(leftBox.clientWidth / leftCharWidth);
+		const rightWidth = Math.floor(rightBox.clientWidth / rightCharWidth);
+
+		// Create dollar blocks that fit the current container sizes
+		const leftDollarLine = "$".repeat(Math.max(1, leftWidth));
+		const rightDollarLine = "$".repeat(Math.max(1, rightWidth));
+
+		// Generate the full content with same number of lines as the ASCII logo
+		const leftDollarBlock = Array(asciiLines).fill(leftDollarLine).join("\n");
+		const rightDollarBlock = Array(asciiLines).fill(rightDollarLine).join("\n");
+
+		// Update the content
+		leftBox.innerText = leftDollarBlock;
+		rightBox.innerText = rightDollarBlock;
+	}
+
+	// Initial fill
+	updateDollarFill();
+
+	// Update when window is resized
+	window.addEventListener("resize", updateDollarFill);
+}
+
+window.addEventListener("load", fillWithDollars);
+
+
 // Enhanced JavaScript for SPA functionality
 document.addEventListener('DOMContentLoaded', function() {
 	// Check if we have a current page from PHP

@@ -2,11 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  font-family: monospace;
+  font-weight: 200;
+  color: white;
   }
 
 body {
   background-color: black;
-  font-family: monospace;
   /* padding: 20px; */
 }
 
