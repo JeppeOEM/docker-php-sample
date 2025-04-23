@@ -1,90 +1,15 @@
-<?php
-// Get the requested URL path
-$request_uri = $_SERVER['REQUEST_URI'];
 
-// Remove query string if present
-$request_uri = strtok($request_uri, '?');
+<!DOCTYPE html>
+<html lang="en">
 
-// Remove leading slash
-$request_uri = ltrim($request_uri, '/');
-
-// If empty, set to home
-if (empty($request_uri)) {
-    $page = 'home';
-} else {
-    // Use the requested path as the page name
-    $page = $request_uri;
-}
-
-// Sanitize the page name to prevent security issues
-$page = preg_replace('/[^a-zA-Z0-9_-]/', '', $page);
-
-// Default to home if the page name gets completely sanitized away
-if (empty($page)) {
-    $page = 'home';
-}
-?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en-US">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>mrqdt.xyz</title>
-    <meta name="description" content="Home of the world's biggest collection of classic text mode fonts, system fonts and BIOS fonts from DOS-era IBM PCs and compatibles">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link id="default-style" href="/css/style.css" rel="stylesheet" media="screen" type="text/css">
-    <!-- <link id="default-style" href="/css/style2.css" rel="stylesheet" media="screen" type="text/css"> -->
-    <!-- <link id="default-style" href="/css/style3.css" rel="stylesheet" media="screen" type="text/css"> -->
-    <link id="mq-style" href="/css/oldschool-pc-fonts-mq0cef.css?ver=II.II" rel="stylesheet" media="screen" type="text/css">
-    <script defer src="/web-components/comp-dd/comp-dd.js" type="text/javascript"></script>
-    <script defer src="/js/index.js" type="text/javascript"></script>
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-    <meta name="theme-color" content="#000000">
-    <!-- Add a variable to pass the current page to JavaScript -->
-    <script>
-        // Store the current page as a JavaScript variable
-        window.currentPage = '<?php echo $page; ?>';
-    </script>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style_ascii.css">
+  <title>ANSI Art</title>
+
 </head>
-<body class="xform">
-<div class="layout-container">
-   <div class="side-bar">
-    <?php include 'menu.php'; ?>
-    </div>
-    <div class="main-content">
 
-        <!-- Content container to hold all the sliding pages -->
-        <div class="content-container">
-            <!-- Home content -->
-            <div id="home-content" class="page-content <?php echo ($page === 'home') ? 'active' : ''; ?>">
-                <h3>Welcome Home</h3>
-                <p>This is the home page content. Click on the menu items to see the sliding transitions.</p>
-            </div>
-
-            <!-- Bio content -->
-            <div id="bio-content" class="page-content <?php echo ($page === 'bio') ? 'active' : ''; ?>">
-                <h3>Biography</h3>
-                <p>Here's my biography and background information.</p>
-            </div>
-
-            <!-- Portfolio content -->
-            <div id="portfolio-content" class="page-content <?php echo ($page === 'portfolio') ? 'active' : ''; ?>">
-                <h3>My Portfolio</h3>
-                <p>Check out my latest projects and work examples.</p>
-            </div>
-
-            <!-- Art content -->
-            <div id="art-content" class="page-content <?php echo ($page === 'art') ? 'active' : ''; ?>">
-                <h3>Art Projects</h3>
-                <p>.Here are some of my creative art experiments.</p>
-            </div>
-        </div>
-            </div>
-
-
+<body>
   <div class="column-flex">
     <div class="top-section">
       <div class="center-flex">
@@ -118,39 +43,75 @@ if (empty($page)) {
 
 
 <div class="main-content">
- <h2>gg</h2>
+ <h2>gg</h2> 
 </div>
 
   </div>
-
-      <!--  <div class="bottom-left-box">-->
-      <!--      <div id="menu page-content active" class="greyframe titledbox shadow0xb0">-->
-      <!--          <div class="hdr"><h2 class="cap">Hello</h2></div>-->
-      <!--<p>I am Jeppe Marquardt, a full-stack web developer. -->
-      <!--</p>-->
-      <!--      </div>-->
-      <!--  </div>-->
-    </div>
-<pre></pre>
-<pre class="layer"></pre>
-<script type="module">
-    import { run } from './run.js'
-    import * as program from './programs/contributed/letters.js'
-    //import * as program2 from './programs/contributed/slime_dish2.js'
-    run(program, { element : document.querySelector('pre') }).then(function(e){
-      console.log(e)
-    }).catch(function(e) {
-      console.warn(e.message)
-      console.log(e.error)
-        })
-
-
-    run(program2, { element : document.querySelector('.layer') }).then(function(e){
-      console.log(e)
-    }).catch(function(e) {
-      console.warn(e.message)
-      console.log(e.error)
-    })
-</script>
 </body>
+<script>
+  function fillWithDollars() {
+    const asciiLogo = document.getElementById("ascii-logo");
+    const asciiLines = asciiLogo.innerText.trim().split("\n").length;
+
+    // Create a measurement span to calculate the exact width of a dollar sign
+    function getCharWidth(container) {
+      // Create temporary span to measure dollar sign width in the same font as container
+      const span = document.createElement("span");
+      span.style.visibility = "hidden"; // Make it invisible
+      span.style.position = "absolute"; // Remove from flow
+      span.style.whiteSpace = "nowrap"; // Prevent wrapping
+
+      // Copy the font properties from the container
+      const containerStyle = window.getComputedStyle(container);
+      span.style.font = containerStyle.font;
+      span.style.fontSize = containerStyle.fontSize;
+      span.style.fontFamily = containerStyle.fontFamily;
+
+      // Add the dollar sign to measure
+      span.textContent = "$";
+
+      // Add to document to measure
+      document.body.appendChild(span);
+      const width = span.getBoundingClientRect().width;
+      document.body.removeChild(span);
+
+      return width;
+    }
+
+    function updateDollarFill() {
+      // Get the containers
+      const leftBox = document.querySelector(".left-box");
+      const rightBox = document.querySelector(".right-box");
+
+      // Calculate how many dollar signs fit per line based on container width and exact character width
+      const leftCharWidth = getCharWidth(leftBox);
+      const rightCharWidth = getCharWidth(rightBox);
+
+      // Calculate max number of $ that fit in each container
+      const leftWidth = Math.floor(leftBox.clientWidth / leftCharWidth);
+      const rightWidth = Math.floor(rightBox.clientWidth / rightCharWidth);
+
+      // Create dollar blocks that fit the current container sizes
+      const leftDollarLine = "$".repeat(Math.max(1, leftWidth));
+      const rightDollarLine = "$".repeat(Math.max(1, rightWidth));
+
+      // Generate the full content with same number of lines as the ASCII logo
+      const leftDollarBlock = Array(asciiLines).fill(leftDollarLine).join("\n");
+      const rightDollarBlock = Array(asciiLines).fill(rightDollarLine).join("\n");
+
+      // Update the content
+      leftBox.innerText = leftDollarBlock;
+      rightBox.innerText = rightDollarBlock;
+    }
+
+    // Initial fill
+    updateDollarFill();
+
+    // Update when window is resized
+    window.addEventListener("resize", updateDollarFill);
+  }
+
+  window.addEventListener("load", fillWithDollars);
+</script>
+
 </html>
