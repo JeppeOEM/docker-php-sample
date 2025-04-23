@@ -1,3 +1,4 @@
+
 <?php
 // Get the requested URL path
 $request_uri = $_SERVER['REQUEST_URI'];
